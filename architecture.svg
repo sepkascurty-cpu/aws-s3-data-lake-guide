@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" font-family="Arial, Helvetica, sans-serif">
+  <rect width="980" height="520" fill="#ffffff"/>
+  <text x="490" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#232f3e">AWS S3 Data Lake — Bronze → Silver → Gold</text>
+  <text x="490" y="60" text-anchor="middle" font-size="14" fill="#666666">One catalog, one query engine, guardrails at every layer</text>
+
+  <!-- Sources -->
+  <rect x="30" y="100" width="170" height="90" rx="10" fill="#eef4ff" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="115" y="135" text-anchor="middle" font-size="15" font-weight="bold" fill="#232f3e">Sources</text>
+  <text x="115" y="158" text-anchor="middle" font-size="13" fill="#444444">Apps • APIs • Files</text>
+  <text x="115" y="176" text-anchor="middle" font-size="13" fill="#444444">Databases • Streams</text>
+
+  <!-- Ingestion -->
+  <rect x="250" y="100" width="170" height="90" rx="10" fill="#fff4e5" stroke="#d98e00" stroke-width="2"/>
+  <text x="335" y="135" text-anchor="middle" font-size="15" font-weight="bold" fill="#232f3e">Ingestion</text>
+  <text x="335" y="158" text-anchor="middle" font-size="13" fill="#444444">Glue / DMS / Kinesis</text>
+  <text x="335" y="176" text-anchor="middle" font-size="13" fill="#444444">Append-only landing</text>
+
+  <!-- S3 zones -->
+  <rect x="470" y="100" width="480" height="260" rx="12" fill="#f7f7f7" stroke="#232f3e" stroke-width="2"/>
+  <text x="710" y="125" text-anchor="middle" font-size="15" font-weight="bold" fill="#232f3e">Amazon S3 — three zones, one bucket</text>
+  <rect x="490" y="140" width="140" height="90" rx="8" fill="#c0392b" opacity="0.9"/>
+  <text x="560" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">Bronze</text>
+  <text x="560" y="192" text-anchor="middle" font-size="12" fill="#ffffff">Raw, immutable</text>
+  <text x="560" y="208" text-anchor="middle" font-size="12" fill="#ffffff">As received</text>
+  <rect x="650" y="140" width="140" height="90" rx="8" fill="#b0bec5" opacity="0.95"/>
+  <text x="720" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#232f3e">Silver</text>
+  <text x="720" y="192" text-anchor="middle" font-size="12" fill="#232f3e">Cleaned Parquet</text>
+  <text x="720" y="208" text-anchor="middle" font-size="12" fill="#232f3e">Partitioned</text>
+  <rect x="810" y="140" width="140" height="90" rx="8" fill="#f1c40f"/>
+  <text x="880" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#232f3e">Gold</text>
+  <text x="880" y="192" text-anchor="middle" font-size="12" fill="#232f3e">Curated, aggregated</text>
+  <text x="880" y="208" text-anchor="middle" font-size="12" fill="#232f3e">Ready to serve</text>
+  <text x="710" y="260" text-anchor="middle" font-size="13" fill="#444444">Lifecycle rules cool each zone automatically</text>
+  <text x="710" y="282" text-anchor="middle" font-size="13" fill="#444444">Block Public Access ON • SSE-KMS encryption</text>
+  <text x="710" y="310" text-anchor="middle" font-size="13" fill="#444444">Standard → Intelligent-Tiering → Glacier Deep Archive</text>
+  <text x="710" y="340" text-anchor="middle" font-size="13" fill="#444444">Bronze → Silver → Gold via Glue ETL jobs</text>
+
+  <!-- Arrows top -->
+  <line x1="200" y1="145" x2="250" y2="145" stroke="#232f3e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="420" y1="145" x2="470" y2="145" stroke="#232f3e" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#232f3e"/></marker></defs>
+
+  <!-- Catalog / governance -->
+  <rect x="30" y="230" width="390" height="130" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="225" y="258" text-anchor="middle" font-size="15" font-weight="bold" fill="#232f3e">Governance — Glue Data Catalog + Lake Formation</text>
+  <text x="225" y="282" text-anchor="middle" font-size="13" fill="#444444">Crawlers register tables • ETL registers cleaned tables</text>
+  <text x="225" y="304" text-anchor="middle" font-size="13" fill="#444444">Table- &amp; column-level permissions per role</text>
+  <text x="225" y="326" text-anchor="middle" font-size="13" fill="#444444">Not in the catalog = does not exist for consumers</text>
+
+  <!-- Consumers -->
+  <rect x="30" y="390" width="920" height="90" rx="10" fill="#eef4ff" stroke="#4a6fa5" stroke-width="2"/>
+  <text x="490" y="418" text-anchor="middle" font-size="15" font-weight="bold" fill="#232f3e">Consumers — query Gold (and Silver, with permission)</text>
+  <text x="490" y="442" text-anchor="middle" font-size="13" fill="#444444">Amazon Athena (serverless SQL) • QuickSight dashboards • SageMaker / ML jobs</text>
+  <text x="490" y="464" text-anchor="middle" font-size="13" fill="#444444">Parquet + partitioning = small scans, small bills</text>
+  <line x1="710" y1="360" x2="710" y2="390" stroke="#232f3e" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
