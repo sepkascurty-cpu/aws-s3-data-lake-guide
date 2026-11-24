@@ -11,6 +11,10 @@
 > that stop storage costs and access sprawl before they start. This guide builds
 > exactly that, with Terraform you can actually run.
 
+## 🌍 In plain words — what is this, really?
+
+Imagine your company keeps throwing every file — sales reports, app logs, photos, and spreadsheets — into one huge warehouse with no shelves and no labels. At first it feels easy, but soon nobody can find anything or trust what they find. A data lake on S3 is that warehouse, but organised: raw deliveries stay untouched in one area, cleaned-up files go to another, and polished reports ready for managers sit in a third. A catalogue works like the warehouse inventory list, so people can search for data instead of opening every box. That is exactly what this guide builds in technical terms: S3 zones called Bronze, Silver, and Gold, a Glue catalog, and Athena to query the files with SQL.
+
 ## Why this matters
 
 Most "data lakes" fail for the same three reasons:
@@ -127,7 +131,6 @@ for the same question. Format choice *is* cost control.
 | `README.md` | This guide |
 | `architecture.svg` | Zone + catalog + query architecture |
 | `s3-data-lake/main.tf` | Terraform: bucket, zones, lifecycle, Glue, Athena, Lake Formation basics |
-| `quiz.md` | 5 questions to check you actually got it |
 
 ## Try it
 
@@ -142,6 +145,3 @@ terraform apply
 > and ETL jobs are not free. Run the smallest dataset you can, check the
 > pricing page for your region, and set a billing alarm before you scale up.
 
-## Quiz teaser
-
-Why should Bronze be immutable? (Answer in `quiz.md` — no peeking.)
